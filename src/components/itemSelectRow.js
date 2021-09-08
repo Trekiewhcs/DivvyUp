@@ -6,7 +6,7 @@ const ItemSelectRow = props => {
   return (
     <Flex align="center" justify="center" py="1em">
       <Text fontSize="2em" px="1em">
-        {props.itemQuantity}
+        {props.item.them}
       </Text>
       <Spacer />
       <Flex
@@ -18,10 +18,12 @@ const ItemSelectRow = props => {
         border="1px"
       >
         <Text px=".25em" fontSize="1.5em" textTransform="capitalize">
-          {props.itemName} ${props.itemPrice}
+          {props.item.name} ${props.item.price}
         </Text>
         <Flex>
           <MinusIcon
+            onClick={props.handleMinus}
+            id={props.item.name}
             borderBottomLeftRadius="lg"
             borderTop="1px"
             borderEnd="1px"
@@ -33,6 +35,8 @@ const ItemSelectRow = props => {
             _hover={{ bgColor: "red.200" }}
           />
           <AddIcon
+            onClick={props.handlePlus}
+            id={props.item.name}
             borderBottomRightRadius="lg"
             bgColor="green.100"
             borderTop="1px"
@@ -47,7 +51,7 @@ const ItemSelectRow = props => {
       </Flex>
       <Spacer />
       <Text fontSize="2em" px="1em">
-        {props.itemCount}
+        {props.item.you}
       </Text>
     </Flex>
   )

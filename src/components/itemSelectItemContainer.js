@@ -8,10 +8,9 @@ const ItemSelectItemContainer = props => {
       {props.itemList.map(item => (
         <ItemSelectRow
           key={item.name}
-          itemName={item.name}
-          itemPrice={item.price}
-          itemQuantity={item.quantity}
-          itemCount={item.count}
+          handlePlus={props.handlePlus}
+          handleMinus={props.handleMinus}
+          item={item}
         />
       ))}
     </Box>

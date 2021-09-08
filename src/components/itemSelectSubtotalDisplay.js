@@ -1,11 +1,11 @@
 import React from "react"
 import { Spacer, Flex, Box, Center, Text, Button } from "@chakra-ui/react"
-const ItemSelectSubtotalDisplay = () => {
+const ItemSelectSubtotalDisplay = props => {
   return (
     <Box position="sticky" top="0" bgColor="orange.300">
       <Center>
         <Text fontSize="5em" fontWeight="bold">
-          $0
+          ${props.subTotal}
         </Text>
       </Center>
       <Center>
