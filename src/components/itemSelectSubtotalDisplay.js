@@ -24,6 +24,8 @@ const ItemSelectSubtotalDisplay = props => {
       </Center>
       <Flex>
         <Text
+          minW="20%"
+          textAlign="center"
           fontSize="1.25em"
           fontWeight="bold"
           p=".5em"
@@ -33,6 +35,8 @@ const ItemSelectSubtotalDisplay = props => {
         </Text>
         <Spacer />
         <Text
+          minW="20%"
+          textAlign="center"
           fontSize="1.25em"
           fontWeight="bold"
           p=".5em"

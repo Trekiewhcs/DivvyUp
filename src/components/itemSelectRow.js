@@ -5,13 +5,13 @@ import { AddIcon, MinusIcon } from "@chakra-ui/icons"
 const ItemSelectRow = props => {
   return (
     <Flex align="center" justify="center" py="1em">
-      <Text fontSize="2em" px="1em">
+      <Text textAlign="center" w="20%" fontSize="2em">
         {props.item.them}
       </Text>
-      <Spacer />
       <Flex
         justify="center"
         align="center"
+        w="60%"
         direction="column"
         borderRadius="lg"
         bgColor="gray.400"
@@ -20,7 +20,7 @@ const ItemSelectRow = props => {
         <Text px=".25em" fontSize="1.5em" textTransform="capitalize">
           {props.item.name} ${props.item.price}
         </Text>
-        <Flex>
+        <Flex borderBottomRadius="lg" w="100%" bgColor="yellow.100">
           <MinusIcon
             onClick={props.handleMinus}
             id={props.item.name}
@@ -49,8 +49,7 @@ const ItemSelectRow = props => {
           />
         </Flex>
       </Flex>
-      <Spacer />
-      <Text fontSize="2em" px="1em">
+      <Text textAlign="center" w="20%" fontSize="2em" px="1em">
         {props.item.you}
       </Text>
     </Flex>
