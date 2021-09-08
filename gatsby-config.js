@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/DivvyUp",
   plugins: [
     {
       resolve: "@chakra-ui/gatsby-plugin",
