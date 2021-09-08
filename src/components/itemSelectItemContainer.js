@@ -8,6 +8,7 @@ const ItemSelectItemContainer = props => {
       {props.itemList.map(item => (
         <ItemSelectRow
           key={item.name}
+          currencyFormatter={props.currencyFormatter}
           handlePlus={props.handlePlus}
           handleMinus={props.handleMinus}
           item={item}

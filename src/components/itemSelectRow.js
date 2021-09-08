@@ -18,7 +18,7 @@ const ItemSelectRow = props => {
         border="1px"
       >
         <Text px=".25em" fontSize="1.5em" textTransform="capitalize">
-          {props.item.name} ${props.item.price}
+          {props.item.name} {props.currencyFormatter.format(props.item.price)}
         </Text>
         <Flex borderBottomRadius="lg" w="100%" bgColor="yellow.100">
           <MinusIcon

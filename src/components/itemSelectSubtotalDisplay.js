@@ -5,7 +5,7 @@ const ItemSelectSubtotalDisplay = props => {
     <Box position="sticky" top="0" bgColor="orange.300">
       <Center>
         <Text fontSize="5em" fontWeight="bold">
-          ${props.subTotal}
+          {props.currencyFormatter.format(props.subTotal)}
         </Text>
       </Center>
       <Center>

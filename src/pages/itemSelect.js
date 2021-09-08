@@ -13,9 +13,10 @@ const ItemSelectPage = () => {
     { name: "soup", price: 9, quantity: 1 },
     { name: "curry", price: 16, quantity: 2 },
   ]
-  // const items = fItems.map(fitem => {
-  //   return { ...fitem, them: fitem.quantity, you: 0 }
-  // })
+  const currencyFormatter = new Intl.NumberFormat("en-NZ", {
+    style: "currency",
+    currency: "NZD",
+  })
   const [items, setItems] = useState(
     fItems.map(fitem => {
       return { ...fitem, them: fitem.quantity, you: 0 }
@@ -25,6 +26,7 @@ const ItemSelectPage = () => {
   const handlePlus = e => {
     let tmpItems = [...items]
     let eItem = tmpItems.find(x => x.name === e.currentTarget.id)
+    // I don't understand why this updates the items array, but it does, and it works, so I won't touch it
     if (eItem.them > 0) {
       setSubTotal(subTotal + eItem.price)
       eItem.you++
@@ -43,9 +45,13 @@ const ItemSelectPage = () => {
 
   return (
     <Box minH="100vh" bgColor="orange.200">
-      <ItemSelectSubtotalDisplay subTotal={subTotal} />
+      <ItemSelectSubtotalDisplay
+        subTotal={subTotal}
+        currencyFormatter={currencyFormatter}
+      />
       <ItemSelectItemContainer
         itemList={items}
+        currencyFormatter={currencyFormatter}
         handleMinus={handleMinus}
         handlePlus={handlePlus}
       />
