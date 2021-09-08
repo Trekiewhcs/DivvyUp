@@ -1,5 +1,9 @@
 import React from "react"
-
+import ItemSelectPage from "./itemSelect"
 export default function Home() {
-  return <div>Hello world!</div>
+  return (
+    <div>
+      <ItemSelectPage />
+    </div>
+  )
 }
