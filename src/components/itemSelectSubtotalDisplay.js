@@ -17,6 +17,7 @@ const ItemSelectSubtotalDisplay = () => {
           w="4em"
           fontSize="3em"
           textTransform="uppercase"
+          _hover={{ bgColor: "cyan.200" }}
         >
           Pay
         </Button>

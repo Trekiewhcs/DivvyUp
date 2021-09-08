@@ -2,22 +2,18 @@ import React from "react"
 import ItemSelectRow from "./itemSelectRow"
 import { Box } from "@chakra-ui/react"
 
-const ItemSelectItemContainer = () => {
+const ItemSelectItemContainer = props => {
   return (
     <Box>
-      <ItemSelectRow />
-      <ItemSelectRow />
-      <ItemSelectRow />
-      <ItemSelectRow />
-      <ItemSelectRow />
-      <ItemSelectRow />
-      <ItemSelectRow />
-      <ItemSelectRow />
-      <ItemSelectRow />
-      <ItemSelectRow />
-      <ItemSelectRow />
-      <ItemSelectRow />
-      <ItemSelectRow />
+      {props.itemList.map(item => (
+        <ItemSelectRow
+          key={item.name}
+          itemName={item.name}
+          itemPrice={item.price}
+          itemQuantity={item.quantity}
+          itemCount={item.count}
+        />
+      ))}
     </Box>
   )
 }

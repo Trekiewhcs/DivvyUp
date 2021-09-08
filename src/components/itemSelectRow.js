@@ -2,11 +2,11 @@ import React from "react"
 import { Flex, Spacer, Text } from "@chakra-ui/react"
 import { AddIcon, MinusIcon } from "@chakra-ui/icons"
 
-const ItemSelectRow = () => {
+const ItemSelectRow = props => {
   return (
     <Flex align="center" justify="center" py="1em">
       <Text fontSize="2em" px="1em">
-        2
+        {props.itemQuantity}
       </Text>
       <Spacer />
       <Flex
@@ -17,8 +17,8 @@ const ItemSelectRow = () => {
         bgColor="gray.400"
         border="1px"
       >
-        <Text px=".25em" fontSize="1.5em">
-          Burger $10
+        <Text px=".25em" fontSize="1.5em" textTransform="capitalize">
+          {props.itemName} ${props.itemPrice}
         </Text>
         <Flex>
           <MinusIcon
@@ -29,6 +29,8 @@ const ItemSelectRow = () => {
             w="50%"
             h="2em"
             bgColor="red.100"
+            cursor="pointer"
+            _hover={{ bgColor: "red.200" }}
           />
           <AddIcon
             borderBottomRightRadius="lg"
@@ -38,12 +40,14 @@ const ItemSelectRow = () => {
             p=".25em"
             w="50%"
             h="2em"
+            cursor="pointer"
+            _hover={{ bgColor: "green.200" }}
           />
         </Flex>
       </Flex>
       <Spacer />
       <Text fontSize="2em" px="1em">
-        0
+        {props.itemCount}
       </Text>
     </Flex>
   )
